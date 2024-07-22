@@ -28,6 +28,7 @@ export const useMovies = () => {
       setPopular(popularMovies);
       setUpComing(upComingMovies);
       setTop_rated(topRatedMovies);
+      setIsLoading(false);
     } catch (error) {
       console.error('Error al cargar las películas:', error);
     }
