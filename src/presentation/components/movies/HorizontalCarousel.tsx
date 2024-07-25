@@ -20,7 +20,6 @@ export const HorizontalCarousel = ({movies, title, loadNextPage}: Props) => {
 
   useEffect(() => {
     setTimeout(() => {
-      
       isLoading.current = false;
     }, 200);
   }, [movies]);
@@ -55,7 +54,7 @@ export const HorizontalCarousel = ({movies, title, loadNextPage}: Props) => {
         renderItem={({item}) => (
           <MoviePoster movie={item} width={140} height={200} />
         )}
-        keyExtractor={item => item.id.toString()}
+        keyExtractor={(item,index) => `${item.id}-${index}`}
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         onScroll={onScroll}
